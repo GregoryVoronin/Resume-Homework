@@ -7,8 +7,8 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Grisha',
-    lastname: 'Voronin',
+    firstname: 'Misha',
+    lastname: 'Pirogov',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ в місяць',
