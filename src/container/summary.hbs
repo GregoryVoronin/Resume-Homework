@@ -1,0 +1,22 @@
+<div>
+    {{#with main.summary}}
+        <section>
+            {{>title data=title big=true}}
+            <div>
+                <p>
+                    {{text}}
+                </p>
+            </div>
+        </section>
+    {{/with}}
+    {{#with main.experience}}
+        <section>
+            {{>title data=title big=false}}
+            <div>
+                <p>
+                    {{text}}
+                </p>
+            </div>
+        </section>
+    {{/with}}
+</div>

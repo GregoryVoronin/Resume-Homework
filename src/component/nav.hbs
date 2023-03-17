@@ -1,0 +1,8 @@
+<nav>
+    {{#with nav}}
+        {{>link href=summaryPage.url text=summaryPage.text isLine=true}}
+        {{>link href=skillsPage.url text=skillsPage.text isLine=true}}
+        {{>link href=educationPage.url text=educationPage.text isLine=true}}
+        {{>link href=workPage.url text=workPage.text isLine=true noDivider=true}}
+    {{/with}}
+</nav>

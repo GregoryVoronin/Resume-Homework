@@ -1,0 +1,64 @@
+<div>
+    {{#with main.works}}
+        <section>
+            {{>title data=title big=true}}
+            <ol>
+                {{#each list}}
+                    <li>
+                        <div>{{position}}</div>
+                        <br>
+                        <div>
+                            {{duration.from}} -
+                            {{#if duration.to}}
+                                {{duration.to}}
+                            {{else}}
+                                (досі працюю)
+                            {{/if}}
+                            </div>
+                        <br>
+                        <div>{{#if company.url}}
+                            {{>link href=company.url text=company.name blank=true noDivider=true}}
+                        {{else}}
+                            <b>{{company.name}}</b>
+                        {{/if}}</div>
+                        <br>
+                        <br>
+                        <div><strong>Projects - {{projectAmount}}</strong></div>
+                        <br>
+                        <ul>
+                            {{#each projects}}
+                                <li>
+                                    <div>{{#if url}}
+                                        {{>link href=url text=name blank=true noDivider=true}}
+                                    {{else}}
+                                        {{name}}
+                                    {{/if}}</div>
+                                    <br>
+                                    <div><p>{{about}}</p></div>
+                                    <br>
+                                    <div><em>Project stacks ({{stackAmount}}):</em></div>
+                                    <br>
+                                    <ul>
+                                        {{#each stacks}}
+                                            <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                    <br>
+                                    <div><em>Project awards ({{awardAmount}}):</em></div>
+                                    <br>
+                                    <ul>
+                                        {{#each awards}}
+                                            <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                                <br>
+                                <br>
+                            {{/each}}
+                        </ul>
+                    </li>
+                {{/each}}
+            </ol>
+        </section>
+    {{/with}}
+</div>

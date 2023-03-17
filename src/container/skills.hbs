@@ -1,0 +1,43 @@
+<div>
+    {{#with main.skills}}
+        <section>
+            {{>title data=title big=true}}
+            <ul>
+                {{#each list}}
+                 <li>
+                    {{name}}
+                    {{#if point includeZero=true}}
+                        {{point}}
+                    {{/if}}
+                    {{#if isTop}}
+                        🔥
+                    {{/if}}
+                    {{#unless point includeZero=true}}
+                        (не вивчаємо)
+                    {{/unless}}
+                    {{#unless point}}
+                        {{#if point includeZero=true}}
+                            (в процесі)
+                        {{/if}}
+                    {{/unless}}
+                 </li>
+                 {{/each}}
+            </ul>
+        </section>
+    {{/with}}
+    {{#with main.hobbies}}
+        <section>
+            {{>title data=title big=false}}
+            <ul>
+                {{#each list}}
+                    <li>
+                        {{name}}
+                        {{#if isMain}}
+                            (favourite)
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/with}}
+</div>
