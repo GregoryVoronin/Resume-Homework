@@ -1,0 +1,71 @@
+<div>
+    {{#with bio}}
+        <section>
+            <h1>{{name}}</h1>
+            <em>(1879 - 1955)</em>
+            <p><b>{{name}}</b> <em>(народився {{birthdate}} року в {{birthplace}}, помер {{deathdate}} року в {{deathplace}})</em> - {{nationality}} {{occupation}}. Винайшов {{known_for}}.</p>
+            <p>
+                <h2>Освіта:</h2>
+                <ul>
+                    {{#each education}}
+                    <li>
+                        Закінчив {{institution}}, кафедру {{field}} у {{year}} році, отримавши звання {{degree}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </p>
+            <p>
+                <h2>Публікації:</h2>
+                <ul>
+                    {{#each notable_publications}}
+                    <li>
+                        {{title}} <em>({{year}})</em> - <b>Видавництво:</b> {{publisher}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </p>
+            <p>Був одружений двічі: 
+                {{#each partners}}
+                    {{relationship}} - {{name}} <em>({{years}})</em>,
+                {{/each}}.
+            </p>
+            <p>
+                <h2>Нагороди:</h2>
+                <ul>
+                    {{#each awards}}
+                    <li>
+                        {{title}} <em>({{year}})</em><br>
+                        <p>{{description}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </p>
+            <p>
+                <h2>Відкриття:</h2>
+                <ul>
+                    {{#each major_discoveries}}
+                    <li>
+                        {{title}} <em>({{year}})</em><br>
+                        <p>{{description}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </p>
+            <p>{{name}} надихали {{influenced}}, а він, в свою чергу, своєю діяльністю надихав {{influences}}. Цитати, відомі на весь світ:
+                {{#each quotes}}
+                    <em><blockquote>"{{this}}"</blockquote></em>
+                {{/each}}
+            </p>
+            <p>
+                <h2>Внесок у науку:</h2>
+                <ul>
+                    {{#with contributions}}
+                    <li>
+                        {{title}} <em>({{year}})</em> - {{description}}. Галузь - {{field}}
+                    </li>
+                    {{/with}}
+                </ul>
+            </p>
+        </section>
+    {{/with}}
+</div>
