@@ -1,0 +1,67 @@
+<div>
+    {{#with web}}
+        <section>
+            <ul>
+            {{#each languages}}
+                <li>
+                    <h2>{{name}} (ver. {{version}})</h2>
+                    <p>{{description}}</p>
+                    {{#if elements}}
+                    <ul>
+                        {{#each elements}}
+                        <li>
+                            <p><code>{{name}}</code> - <em>{{description}}</em></p>
+                            <h3>Attributes:</h3>
+                            <ul>
+                            {{#each attributes}}
+                                <li>
+                                    <p>Tag: "{{name}}" - {{description}}</p>
+                                </li>
+                            {{/each}}
+                            </ul>
+                        </li>
+                        <br>
+                        {{/each}}
+                    </ul>
+                    {{else if properties}}
+                    <ul>
+                        {{#each properties}}
+                        <li>
+                            <p><code>{{name}}</code> - <em>{{description}}</em></p>
+                            <h3>Values:</h3>
+                            <ul>
+                            {{#each values}}
+                                <li>
+                                    <p>"{{value}}" - {{description}}</p>
+                                </li>
+                            {{/each}}
+                            </ul>
+                        </li>
+                        <br>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <ul>
+                        {{#each functions}}
+                        <li>
+                            <p><code>{{name}}</code> - <em>{{description}}</em></p>
+                            <h3>Parameters:</h3>
+                            <ul>
+                            {{#each parameters}}
+                                <li>
+                                    <p><code>{{name}}</code> (Type: {{type}}) - {{description}}</p>
+                                </li>
+                            {{/each}}
+                            </ul>
+                            <br>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                <hr>
+            {{/each}}
+            </ul>
+        </section>
+    {{/with}}
+</div>
