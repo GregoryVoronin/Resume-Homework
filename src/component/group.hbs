@@ -1,0 +1,18 @@
+{{#if groups}}
+    <h3>Groups:</h3>
+    <ul>
+    {{#each groups}}
+        <li>
+            {{>name}}
+            <h3>Members:</h3>
+            <ul>
+                {{#each members}}
+                <li>
+                    {{>name isUser=true}}
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    {{/each}}
+{{else}}
+{{/if}}
