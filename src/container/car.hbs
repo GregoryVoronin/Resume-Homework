@@ -1,0 +1,230 @@
+<div>
+    <section>
+        <h1>{{make}} {{model}} ({{year}})</h1>
+        <div>Color: {{color}}</div>
+    {{#with features}}
+        {{#with interior}}
+        <h2>Interior:</h2>
+            {{#with seats}}
+            <h3>Seats:</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>material</td>
+                    <td>{{material}}</td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td>{{color}}</td>
+                </tr>
+                <tr>
+                    <td>heated</td>
+                    <td>{{>boolean data=heated}}</td>
+                </tr>
+                <tr>
+                    <td>ventilated</td>
+                    <td>{{>boolean data=ventilated}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            {{#with dashboard}}
+            <h3>Dashboard:</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>material</td>
+                    <td>{{material}}</td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td>{{color}}</td>
+                </tr>
+                <tr>
+                    <td>display</td>
+                    {{#with display}}
+                    <td>{{resolution}}, {{size}}", {{type}}, touchscreen: {{>boolean data=touchscreen}}</td>
+                    {{/with}}
+                </tr>
+            </table>
+            {{/with}}
+            {{#with audio}}
+            <h3>Audio system:</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>system</td>
+                    <td>{{system}}</td>
+                </tr>
+                <tr>
+                    <td>speakers</td>
+                    <td>{{speakers}}</td>
+                </tr>
+                <tr>
+                    <td>subwoofer</td>
+                    <td>{{>boolean data=subwoofer}}</td>
+                </tr>
+                <tr>
+                    <td>bluetooth</td>
+                    <td>{{>boolean data=bluetooth}}</td>
+                </tr>
+                <tr>
+                    <td>CD</td>
+                    <td>{{>boolean data=CD}}</td>
+                </tr>
+                <tr>
+                    <td>USB</td>
+                    <td>{{>boolean data=USB}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            <br>
+            <hr>
+        {{/with}}
+        {{#with exterior}}
+        <h2>Exterior:</h2>
+            {{#with wheels}}
+            <h3>Wheels:</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>size</td>
+                    <td>{{size}}</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>{{type}}</td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td>{{color}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            {{#with headlights}}
+            <h3>Headlights:</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>type</td>
+                    <td>{{type}}</td>
+                </tr>
+                <tr>
+                    <td>brightness</td>
+                    <td>{{brightness}}</td>
+                </tr>
+                <tr>
+                    <td>automatic</td>
+                    <td>{{>boolean data=automatic}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            {{#with sunroof}}
+            <h3>Sunroof</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>type</td>
+                    <td>{{type}}</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>{{size}}</td>
+                </tr>
+                <tr>
+                    <td>automatic</td>
+                    <td>{{>boolean data=automatic}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            <br>
+            <hr>
+        {{/with}}
+        {{#with safety}}
+        <h2>Safety</h2>
+            {{#with airbags}}
+            <h3>Airbags</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>front</td>
+                    <td>{{front}}</td>
+                </tr>
+                <tr>
+                    <td>side</td>
+                    <td>{{side}}</td>
+                </tr>
+                <tr>
+                    <td>knee</td>
+                    <td>{{knee}}</td>
+                </tr>
+                <tr>
+                    <td>rear</td>
+                    <td>{{rear}}</td>
+                </tr>
+            </table>
+            {{/with}}
+            {{#with assistance}}
+            <h3>Assistance</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td>blind_spot_monitoring</td>
+                    <td>{{>boolean data=blind_spot_monitoring}}</td>
+                </tr>
+                <tr>
+                    <td>rear_cross_traffic_alert</td>
+                    <td>{{>boolean data=rear_cross_traffic_alert}}</td>
+                </tr>
+                <tr>
+                    <td>lane_departure_warning</td>
+                    <td>{{>boolean data=lane_departure_warning}}</td>
+                </tr>
+                <tr>
+                    <td>adaptive_cruise_control</td>
+                    <td>{{>boolean data=adaptive_cruise_control}}</td>
+                </tr>
+                <tr>
+                    <td>collision_warning</td>
+                    <td>{{>boolean data=collision_warning}}</td>
+                </tr>
+            </table>
+            {{/with}}
+        <br>
+        <hr>
+        {{/with}}
+    {{/with}}
+    {{#with engine}}
+        <h2>Engine</h2>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td>type</td>
+                <td>{{type}}</td>
+            </tr>
+            <tr>
+                <td>displacement</td>
+                <td>{{displacement}} L.</td>
+            </tr>
+            <tr>
+                <td>horsepower</td>
+                <td>{{horsepower}}</td>
+            </tr>
+            <tr>
+                <td>torque</td>
+                <td>{{torque}}</td>
+            </tr>
+            <tr>
+                <td>transmission</td>
+                <td>{{transmission.type}} ({{transmission.gears}} gears)</td>
+            </tr>
+        </table>
+        <br>
+        <hr>
+    {{/with}}
+    {{#with fuel_economy}}
+        <h2>Fuel economy</h2>
+        <div>City: {{city}}, Highway: {{hihgway}}, Combined {{combined}}</div>
+        <br>
+        <hr>
+    {{/with}}
+    {{#with price}}
+        <h2>Price</h2>
+        <div>Base $: {{base}}</div>
+        <div>Destination $: {{destination}}</div>
+        <div>Options $: {{options.navigation}} + {{options.moonroof}} + {{options.premium_paint}}</div>
+        <h2>Total price: {{total}} $</h2>
+    {{/with}}
+    </section>
+
+</div>
