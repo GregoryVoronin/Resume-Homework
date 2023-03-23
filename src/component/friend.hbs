@@ -1,0 +1,26 @@
+{{#if friends}}
+    <h3>Friends:</h3>
+    <ul>
+    {{#each friends}}
+        <li>
+            {{>name isUser=true}}
+            {{>friend}}
+            {{>group}}
+        </li>
+    {{/each}}
+    </ul>
+{{else if mutual_friends}}
+    <h3>Mutual friends:</h3>
+    <ul>
+        {{#each mutual_friends}}
+        <li>
+            {{>name isUser=true}}
+            {{>friend}}
+            {{>group}}
+        </li>
+        {{/each}}
+    </ul>
+{{else}}
+
+{{/if}}
+
