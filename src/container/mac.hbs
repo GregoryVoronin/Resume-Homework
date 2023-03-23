@@ -1,0 +1,84 @@
+<div>
+    <section>
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <h2>Price: {{price}}</h2>
+        <hr>
+        <br>
+        {{#with features}}
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td>processor</td>
+                {{#with processor}}
+                <td>{{brand}} {{model}} ({{speed}}), {{cores}} cores, {{cache}} cache</td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>memory</td>
+                {{#with memory}}
+                <td>{{size}} ({{speed}}) {{type}} </td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>storage</td>
+                {{#with storage}}
+                <td>{{size}} {{type}} </td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>display</td>
+                {{#with display}}
+                <td>{{size}} ({{resolution}}, {{refresh_rate}}), {{technology}}. Color space: {{color_space}}, brightness: {{brightness}}</td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>graphics</td>
+                {{#with graphics}}
+                <td>{{brand}} {{model}}, {{memory}}</td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>ports</td>
+                <td>
+                    <ul>
+                    {{#each ports}}
+                        <li>{{count}} x {{type}} ({{features}})</li><br>
+                    {{/each}}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>battery</td>
+                {{#with battery}}
+                <td>{{capacity}}, {{type}}, {{life}}</td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>weight</td>
+                <td>{{weight}}</td>
+            </tr>
+            <tr>
+                <td>dimensions</td>
+                {{#with dimensions}}
+                <td>{{height}} x {{width}} x {{depth}}</td>
+                {{/with}}
+            </tr>
+            <tr>
+                <td>operating_system</td>
+                <td>{{operating_system}}</td>
+            </tr>
+            <tr>
+                <td>accessories</td>
+                <td>
+                    <ul>
+                        {{#each accessories}}
+                        <li>{{name}} ($ {{price}})</li>
+                        {{/each}}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        {{/with}}
+    </section>
+
+</div>
