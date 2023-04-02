@@ -1,0 +1,180 @@
+{{>shopheader}}
+
+<div class="row">
+    <main class="col-8">
+        <h1 class="mb-5">{{header}}</h1>
+        {{#with contacts_data}}
+            {{>bs-subtitle text=title}}
+            {{#each buttons}}
+                {{>bs-btnNew warning=isPrimary warningLine=isOutline text=text}}
+            {{/each}}
+            {{#with form}}
+            <div class="row mt-2">
+                {{#with input}}
+                <div class="col-6">
+                    {{#with surname}}
+                        {{>bs-input}}
+                    {{/with}}
+                </div>
+                <div class="col-6">
+                    {{#with name}}
+                        {{>bs-input}}
+                    {{/with}}
+                </div>
+                <div class="col-6">
+                    {{#with phone}}
+                        {{>bs-input}}
+                    {{/with}}
+                </div>
+                <div class="col-6">
+                    {{#with email}}
+                        {{>bs-input}}
+                    {{/with}}
+                </div>
+                {{/with}}
+                <hr class="my-4">
+            </div>
+
+            {{#each switch}}
+                {{>bs-switch isSwitch=true}}
+            {{/each}}
+            {{/with}}
+        {{/with}}
+
+        <hr class="my-4">
+
+        {{#with delivery}}
+            {{>bs-subtitle text=title}}
+            <div class="card mb-4">
+                <div class="card-body row">
+                    {{#each select}}
+                    <div class="col-6">
+                        {{>bs-select}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{#each delivery_type}}
+                {{>bs-radio text=type textSpan=value}}
+            {{/each}}
+
+            <hr class="my-4">
+
+            {{>bs-subtitle text='Payment'}}
+            {{#each payment}}
+                {{>bs-radio text=type error=description}}
+            {{/each}}
+
+            <hr class="my-4">
+
+            {{#with contact}}
+                {{>bs-subtitle text=title}}
+                {{#each buttons}}
+                    {{>bs-btnNew warning=isPrimary warningLine=isOutline text=text}}
+                {{/each}}
+                <div class="row mt-2">
+                    <div class="col-6">
+                        {{#with surname}}
+                            {{>bs-input}}
+                        {{/with}}
+                    </div>
+                    <div class="col-6">
+                        {{#with name}}
+                            {{>bs-input}}
+                        {{/with}}
+                    </div>
+                    <div class="col-6">
+                        {{#with phone}}
+                            {{>bs-input}}
+                        {{/with}}
+                    </div>
+                    <div class="col-6">
+                        {{#with email}}
+                            {{>bs-input}}
+                        {{/with}}
+                    </div>
+                </div>
+            {{/with}}
+
+            <hr class="my-4">
+
+            {{#with coment}}
+                {{>bs-input}}
+            {{/with}}
+
+        {{/with}}
+
+        <hr class="my-4">
+
+        {{#with coupon}}
+            {{>bs-subtitle text=title}}
+            {{#with select.availabel_coupon}}
+                {{>bs-select isBig=true}}
+            {{/with}}
+            {{#with select.friend_coupon}}
+                {{>bs-select isSmall=true}}
+            {{/with}}
+            {{#with add.friend}}
+                {{>bs-input isBig=true}}
+            {{/with}}
+            {{#with add.colleague}}
+                {{>bs-input isSmall=true}}
+            {{/with}}
+        {{/with}}
+        <hr class="my-4">
+        {{#with quiz}}
+            {{>bs-subtitle text=title}}
+            {{#with preference}}
+                <p>{{title}}</p>
+                {{#each options}}
+                    {{>bs-radio text=this}}
+                {{/each}}
+            {{/with}}
+
+            {{#with your_expirience}}
+                {{>bs-input}}
+            {{/with}}
+
+            {{#with purchase_frequency}}
+                {{>bs-select}}
+            {{/with}}
+
+            {{#with factors}}
+                {{#each options}}
+                    {{>bs-switch text=this}}
+                {{/each}}
+            {{/with}}
+        {{/with}}
+    </main>
+    <aside class="col-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                {{#each action_block}}
+                    {{>bs-btnNew success=isPrimary danger=isDanger info=isInfo text=text isRow=true}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="card mb-2">
+            {{#with total}}
+            <div class="card-body">
+                <div class="display-6 mb-1">{{title}}</div>
+                {{#each item_list}}
+                    <div>{{name}}: {{price}}</div>
+                {{/each}}
+                <hr class="my-2">
+                {{#each additional_info}}
+                    <div>{{text}}: {{value}}</div>
+                {{/each}}
+                <hr class="my-2">
+                <div>{{total_price.text}}: {{total_price.value}}</div>
+                <hr class="my-2">
+                {{#each button}}
+                    {{>bs-btnNew primary=isPrimary primaryLine=isOutline text=text isRow=true}}
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+    </aside>
+</div>
+
+{{>shopfooter}}

@@ -1,0 +1,8 @@
+<label>{{label}}</label>
+<select class="form-select {{#if isBig}}form-select-lg{{else if isSmall}}form-select-sm{{/if}}">
+  <option selected disabled>{{placeholder}}</option>
+  {{#each options}}
+  <option value="{{value}}">{{text}}</option>
+  {{/each}}
+</select>
+<p class="form-text">{{caption}}</p>
