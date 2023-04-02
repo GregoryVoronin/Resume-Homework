@@ -1,0 +1,12 @@
+<hr class="my-5">
+<section class="card text-bg-success">
+    {{#with service}}
+    <div class="card-body text-center">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+            {{>bs-btn isLink=true btn-type='btn-primary mx-1' href=link text=text}}
+        {{/each}}
+    </div>
+    {{/with}}
+</section>

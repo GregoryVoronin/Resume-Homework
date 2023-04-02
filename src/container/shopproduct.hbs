@@ -1,0 +1,103 @@
+{{>shopheader}}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {{#each breadcrumb}}
+         {{>bs-breadcrumb href=url text=name}}
+        {{/each}}
+    </ol>
+</nav>
+<main>
+    <div class="row mb-4">
+        {{#with productData}}
+        <div class="col-6">
+            <div class="card border border-0 mb-4">
+                <img class="card-img-top" src="{{img}}" alt="">
+            </div>
+            {{#with info}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">{{title}}</div>
+                    <p>{{about}}</p>
+                    <h3>{{price}}</h3>
+                    <div>
+                        {{#each category}}
+                            {{>badgeNew hot=isHot isRound=true}}
+                            {{>badgeNew new=isNew isRound=true}}
+                            {{>badgeNew bonus=isBonus isRound=true}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        <div class="col-5 offset-1">
+        {{#with item}}
+            <table class="table mb-4">
+                <thead>
+                    <tr>
+                        {{#each head}}
+                            <th>{{this}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each body}}
+                        <tr>
+                            {{#each this}}
+                                {{#if @first}}
+                                    <th>{{this}}</th>
+                                {{else}}
+                                <td>{{this}}</td>
+                                {{/if}}
+                            {{/each}}
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{/with}}
+        {{#with param}}
+        <div class="card mb-4">
+            <div class="card-header">{{title}}</div>
+            <ul class="list-group">
+                {{#each list}}
+                <li class="list-group-item">
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/with}}
+        {{#with alert}}
+            {{>alert error=isError text=text}}
+        {{/with}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    {{#each actionList}}
+                        {{>bs-btnNew warning=isWarning text=name}}
+                        {{>bs-btnNew error=isError text=name}}
+                        {{>bs-btnNew success=isSuccess text=name}}
+                        {{>bs-btnNew good=isGood text=name}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+    <hr class="my-5">
+    <section>
+        {{#with goodsOtherBlock}}
+        <h2 class="mb-5 text-center">{{title}}</h2>
+        <div class="row gx-2 gy-4">
+            {{#each cards}}
+                {{>shopcard}}
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    {{>shopaction}}
+</main>
+{{>shopfooter}}

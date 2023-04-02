@@ -1,0 +1,17 @@
+<header class="card mb-5">
+    {{#with navigation}}
+    <nav class="navbar card-body">
+        <h1 class="navbar-brand">{{Logo}}</h1>
+        <ul class="nav d-flex">
+            {{#each links}}
+            <li class="nav-item">
+                {{>nav-link href=href text=text}}
+            </li>
+            {{/each}}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </nav>
+    {{/with}}
+</header>
