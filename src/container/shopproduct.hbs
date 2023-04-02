@@ -1,11 +1,5 @@
 {{>shopheader}}
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        {{#each breadcrumb}}
-         {{>bs-breadcrumb href=url text=name}}
-        {{/each}}
-    </ol>
-</nav>
+{{>breadcrumb}}
 <main>
     <div class="row mb-4">
         {{#with productData}}
