@@ -1,0 +1,7 @@
+<li class="breadcrumb-item{{#unless url}} active{{/unless}}">
+    {{#unless url}}
+        {{text}}
+    {{else}}
+        <a href="{{url}}">{{text}}</a>
+    {{/unless}}
+</li>

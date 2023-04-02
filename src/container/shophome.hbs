@@ -1,20 +1,4 @@
-<header class="card mb-5">
-    {{#with navigation}}
-    <nav class="navbar card-body">
-        <h1 class="navbar-brand">{{Logo}}</h1>
-        <ul class="nav d-flex">
-            {{#each links}}
-            <li class="nav-item">
-                {{>nav-link href=href text=text}}
-            </li>
-            {{/each}}
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-    </nav>
-    {{/with}}
-</header>
+{{>shopheader}}
 <main>
     <section>
         {{#with newsBlock}}
@@ -49,15 +33,7 @@
         </nav>
         <div class="row gx-2 gy-4">
             {{#each cards}}
-            <div class="col-4">
-                <div class="card">
-                    <img src="{{image}}" alt="{{title}}" class="card-img-top">
-                    <div class="card-body">
-                        <div class="card-title">{{title}} {{>badge hot=isHot isRound=true}} {{>badge new=isNew isRound=true}}</div>
-                        <p>{{description}}</p>
-                    </div>
-                </div>
-            </div>
+                {{>shopcard}}
             {{/each}}
         </div>
         {{/with}}
@@ -90,20 +66,6 @@
         </div>
         {{/with}}
     </section>
-    <hr class="my-5">
-    <section>
-    {{#with footer}}
-        <div class="row g-4">
-            {{#each this}}
-            <div class="col-2 nav flex-column">
-                {{#each this}}
-                <div class="nav-item">
-                    {{>nav-link href=link text=text}}
-                </div>
-                {{/each}}
-            </div>
-            {{/each}}
-        </div>
-    {{/with}}
-    </section>
+    {{>shopaction}}
 </main>
+{{>shopfooter}}
