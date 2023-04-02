@@ -1,0 +1,23 @@
+<div class="card mb-4">
+    <div class="card-body row align-items-center">
+        <div class="col-2 text-center">
+            <img class="rounded" src="{{image}}" alt="">
+        </div>
+        <div class="col-4">
+            <div class="h3">{{name}}</div>
+            <p>{{description}}</p>
+        </div>
+        <div class="col-2">
+            {{#with price}}
+            <div class="mb-2">{{title}}</div>
+            <div class="h3">{{value}}</div>
+            {{/with}}
+        </div>
+        <div class="col-2 text-center">{{amount}}</div>
+        <div class="col-2">
+            {{#each buttons}}
+                {{>bs-btnNew primary=isPrimary dangerLine=isDanger text=text isRow=true}}
+            {{/each}}
+        </div>
+    </div>
+</div>
