@@ -2,20 +2,11 @@
 <main>
     <section>
         {{#with newsBlock}}
-        <h2 class="text-center">{{title}}</h2>
+        <h2 class="text-center mb-4">{{title}}</h2>
         <div class="row gx-2 gy-3">
             {{#each cards}}
-            <div class="col-3">
-                <div class="card text-bg-dark">
-                    <div class="card-header">
-                        {{title}} {{>badge top=isTop isRound=true}} {{>badge new=isNew isRound=true}}
-                    </div>
-                    <div class="card-body">
-                        {{description}}
-                    </div>
-                </div>
-            </div>
-        {{/each}}
+                {{>shoppost}}
+            {{/each}}
         </div>
         {{/with}}
     </section>
@@ -52,18 +43,6 @@
                 {{/each}}
             </div>
         </nav>
-        {{/with}}
-    </section>
-    <hr class="my-5">
-    <section class="card text-bg-success">
-        {{#with service}}
-        <div class="card-body text-center">
-            <h2>{{title}}</h2>
-            <p>{{description}}</p>
-            {{#each buttons}}
-                {{>bs-btn isLink=true btn-type='btn-primary mx-1' href=link text=text}}
-            {{/each}}
-        </div>
         {{/with}}
     </section>
     {{>shopaction}}
