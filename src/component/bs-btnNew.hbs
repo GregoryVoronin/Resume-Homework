@@ -1,12 +1,29 @@
-{{#if warning}}
-<button class="btn btn-warning text-light">{{text}}</button>
+<button class="btn
+{{#if primary}}
+btn-primary text-light
 {{/if}}
-{{#if error}}
-<button class="btn btn-outline-danger">{{text}}</button>
+{{#if primaryLine}}
+btn-outline-primary
 {{/if}}
 {{#if success}}
-<button class="btn btn-success text-light">{{text}}</button>
+btn-success text-light
 {{/if}}
-{{#if good}}
-<button class="btn btn-outline-success">{{text}}</button>
+{{#if successLine}}
+btn-outline-success
 {{/if}}
+{{#if info}}
+btn-info text-light
+{{/if}}
+{{#if warning}}
+btn-warning text-light
+{{/if}}
+{{#if warningLine}}
+btn-outline-warning
+{{/if}}
+{{#if danger}}
+btn-danger
+{{/if}}
+{{#if dangerLine}}
+btn-outline-danger
+{{/if}}
+{{#if isRow}}mb-2 d-block{{/if}}">{{text}}</button>

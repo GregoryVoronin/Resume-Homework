@@ -71,10 +71,7 @@
             <div class="card">
                 <div class="card-body">
                     {{#each actionList}}
-                        {{>bs-btnNew warning=isWarning text=name}}
-                        {{>bs-btnNew error=isError text=name}}
-                        {{>bs-btnNew success=isSuccess text=name}}
-                        {{>bs-btnNew good=isGood text=name}}
+                        {{>bs-btnNew successLine=isGood success=isSuccess warning=isWarning dangerLine=isError text=name}}
                     {{/each}}
                 </div>
             </div>
