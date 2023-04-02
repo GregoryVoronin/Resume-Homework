@@ -1,0 +1,69 @@
+{{>shopheader}}
+
+<main>
+    <section>
+        {{#with header}}
+        <nav class="navbar">
+            <div>
+                <h1>{{title}}</h1>
+            </div>
+            <div class="d-flex">
+                {{#with button}}
+                    {{>bs-btn isLink=true btn-type='btn-outline-secondary' href=link text=text}}
+                {{/with}}
+            </div>
+        </nav>
+        {{/with}}
+    </section>
+    <hr class="my-4">
+    <section>
+        {{#each goodsBlock}}
+            {{>cartGoodsItem}}
+        {{/each}}
+        <hr class="my-4">
+        <div class="row align-items-center">
+            {{#with total}}
+            <div class="col-8">
+                {{>bs-subtitle text=title}}
+                <div class="h1 mb-4">{{amount}}</div>
+                <p>{{delivery}}</p>
+            </div>
+            <div class="col-4">
+                {{#each buttons}}
+                    {{>bs-btnNew success=isSuccess successLine=isOutline text=text isRow=true}}
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+    </section>
+    <hr class="my-4">
+    <section>
+        {{#with goodsOtherBlock}}
+        {{>bs-subtitle text=title isCenter=true}}
+        <div class="row gx-2 gy-4">
+            {{#each cards}}
+                {{>shopcard}}
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <hr class="my-5">
+    <section class="card text-bg-dark">
+        {{#with subscribe}}
+        <nav class="navbar card-body">
+            <div>
+                <h2>{{header}}</h2>
+                <p>{{description}}</p>
+            </div>
+            <div class="d-flex">
+                {{#each buttons}}
+                    {{>bs-btn isLink=true btn-type='btn-primary mx-1' href=link text=text}}
+                {{/each}}
+            </div>
+        </nav>
+        {{/with}}
+    </section>
+
+</main>
+
+{{>shopfooter}}
