@@ -1,29 +1,7 @@
-<button class="btn
-{{#if primary}}
-btn-primary text-light
+{{#if isLink}}
+    <a href="{{href}}" class="btn {{>bs-btnClass}}" {{#if blank}} target="_blank"{{/if}}>{{text}}</a>
+{{else}}
+    <button class="btn {{>bs-btnClass}} {{#if isRow}}mb-2 d-block{{/if}}">{{text}}</button>
 {{/if}}
-{{#if primaryLine}}
-btn-outline-primary
-{{/if}}
-{{#if success}}
-btn-success text-light
-{{/if}}
-{{#if successLine}}
-btn-outline-success
-{{/if}}
-{{#if info}}
-btn-info text-light
-{{/if}}
-{{#if warning}}
-btn-warning text-light
-{{/if}}
-{{#if warningLine}}
-btn-outline-warning
-{{/if}}
-{{#if danger}}
-btn-danger
-{{/if}}
-{{#if dangerLine}}
-btn-outline-danger
-{{/if}}
-{{#if isRow}}mb-2 d-block{{/if}}">{{text}}</button>
+
+

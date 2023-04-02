@@ -1,0 +1,111 @@
+{{>shopheader}}
+
+<main>
+    <h1 class="mb4">{{header}}</h1>
+{{#with purchase}}
+    <nav class="mb-4 border-bottom border-2">
+        <ul class="nav nav-tabs">
+            {{#each tabs}}
+            <li class="nav-item">
+                {{#if @first}}
+                    {{>nav-link active=true text=this}}
+                {{else}}
+                    {{>nav-link text=this}}
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+        {{#with actionBlock}}
+        <div class="row align-items-center">
+            <div class="col-4">
+                {{>bs-input placeholder=input.placeholder}}
+            </div>
+            <div class="col-8">
+                {{#each buttons}}
+                    {{>bs-btnNew success=isSuccess successLine=isOutline dangerLine=isDanger text=text}}
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </nav>
+    <section>
+        {{#each itemList}}
+            {{>purchaseItem}}
+        {{/each}}
+    </section>
+     <hr class="my-5">
+{{/with}}
+    <section>
+{{#with userInfo}}
+        {{>bs-subtitle text=title}}
+        <div class="card mb-2">
+        {{#with profileData}}
+            <div class="card-body">
+                {{>bs-subtitle text=title isSmall=true}}
+                <div class="row mb-3">
+                    {{#each fullName}}
+                        <div class="col-4">
+                            <div>{{this.title}}</div>
+                            <div class="h5">{{this.value}}</div>
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="row mb-3">
+                    {{#each otherInfo}}
+                        <div class="col-4">
+                            <div>{{this.title}}</div>
+                            <div class="h5">{{this.value}}</div>
+                        </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+                <div class="row">
+                    {{#each buttons}}
+                        <div class="col-4">
+                           {{>bs-btnNew isLink=true href=link primary=isPrimary secondaryLine=isSecondary dangerLine=isDanger text=text}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="card mb-2">
+        {{#with recipients}}
+            <div class="card-body">
+                {{>bs-subtitle text=title isSmall=true}}
+                <div class="row mb-3">
+                    {{#each users}}
+                        <div class="col-4">
+                            <div class="h5">{{name}}</div>
+                            <div class="mb-4">{{phone}}</div>
+                            {{>bs-btnNew isLink=true href=button.link primary=true text=button.text}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+        <div class="card">
+        {{#with contacts}}
+            <div class="card-body">
+                {{>bs-subtitle text=title isSmall=true}}
+                <div class="row mb-3">
+                    {{#each contactData}}
+                        <div class="col-4">
+                            <div>{{this.title}}</div>
+                            <div class="h5">{{this.value}}</div>
+                        </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+                <div class="row">
+                    {{#each buttons}}
+                        <div class="col-4">
+                           {{>bs-btnNew isLink=true href=link primary=isPrimary secondaryLine=isSecondary dangerLine=isDanger text=text}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+{{/with}}
+     </section>
+</main>

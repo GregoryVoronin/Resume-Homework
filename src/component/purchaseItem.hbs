@@ -1,0 +1,22 @@
+<div class="row align-items-center border-bottom pb-2 mb-4">
+    <div class="col-3">
+        <p>{{number}}</p>
+        <div class="h4">{{status}}</div>
+    </div>
+    <div class="col-2">
+        {{#with amount}}
+        <div class="mb-2">{{title}}</div>
+        <div class="h3">{{value}}</div>
+        {{/with}}
+    </div>
+    <div class="col-4 d-flex">
+        {{#each images}}
+            <img class="rounded mx-1" src="{{this}}" alt="">
+        {{/each}}
+    </div>
+    <div class="col-2">
+    {{#with button}}
+        {{>bs-btn btn-type="btn-primary" href=link text=text isLink=true blank=true}}
+    {{/with}}
+    </div>
+</div>
