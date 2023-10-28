@@ -53,9 +53,11 @@ var footer = {
 
 router.get('/', function (req, res) {
   res.render('index', {
+    layout: 'index',
+    title: 'Homepage',
     header,
     nav,
-    footer,
+    main: 'Open-minded for new technologies, with 1 years of experience in development. Whenever I start to work on a new project I learn the domain and try to understand the idea of the project. Good team player, every colleague is a friend to me.',
   })
 })
 
@@ -63,6 +65,7 @@ router.get('/', function (req, res) {
 
 router.get('/summary', function (req, res) {
   res.render('summary', {
+    layout: 'index',
     title: 'Summary',
     header,
     nav,
@@ -86,6 +89,7 @@ router.get('/summary', function (req, res) {
 
 router.get('/skills', function (req, res) {
   res.render('skills', {
+    layout: 'index',
     title: 'Skills',
     header,
     nav,
@@ -163,6 +167,7 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   res.render('education', {
+    layout: 'index',
     title: 'Education',
     header,
     nav,
@@ -209,7 +214,7 @@ router.get('/education', function (req, res) {
 
 router.get('/work', function (req, res) {
   res.render('work', {
-    layout: 'big',
+    layout: 'index',
     title: 'Work',
     header,
     nav,
