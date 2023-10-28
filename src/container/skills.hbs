@@ -2,9 +2,10 @@
     {{#with main.skills}}
         <section>
             {{>title data=title big=true}}
-            <ul>
+            <div class="row g-3 mb-3">
                 {{#each list}}
-                 <li>
+                 <div class="col-3">
+                    <div class="card p-1 text-center">
                     {{name}}
                     {{#if point includeZero=true}}
                         {{point}}
@@ -20,24 +21,24 @@
                             (в процесі)
                         {{/if}}
                     {{/unless}}
-                 </li>
+                    </div>
+                 </div>
                  {{/each}}
-            </ul>
-        </section>
+            </div>
     {{/with}}
     {{#with main.hobbies}}
-        <section>
-            {{>title data=title big=false}}
-            <ul>
+        {{>title data=title big=false}}
+            <div class="row g-3 mb-3">
                 {{#each list}}
-                    <li>
+                    <div class="col-3">
+                        <div class="card p-1 text-center">
                         {{name}}
                         {{#if isMain}}
                             (favourite)
                         {{/if}}
-                    </li>
+                        </div>
+                    </div>
                 {{/each}}
-            </ul>
-        </section>
+            </div>
     {{/with}}
 </div>

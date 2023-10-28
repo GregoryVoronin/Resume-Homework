@@ -1,22 +1,20 @@
-<div>
-    {{#with main.summary}}
-        <section>
+<section>
+    <div class="row">
+        {{#with main.summary}}
+        <div class="col-6">   
             {{>title data=title big=true}}
-            <div>
+            <p>
+                {{text}}
+            </p>
+        </div>
+        {{/with}}
+        {{#with main.experience}}
+            <div class="col-6">   
+                {{>title data=title big=false}}
                 <p>
                     {{text}}
                 </p>
             </div>
-        </section>
-    {{/with}}
-    {{#with main.experience}}
-        <section>
-            {{>title data=title big=false}}
-            <div>
-                <p>
-                    {{text}}
-                </p>
-            </div>
-        </section>
-    {{/with}}
-</div>
+        {{/with}}
+    </div>
+</section>
